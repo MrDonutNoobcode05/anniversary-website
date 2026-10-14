@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy 2 Months 💗</title>
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#ffe8f0;--card:#fff;--ink:#7a3550;--pink:#ff7eb0;--soft:#ffc4da}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#3a1f2d;--card:#4d2a3d;--ink:#ffe3ee;--soft:#7a3f5a}}
+:root[data-theme="dark"]{--bg:#3a1f2d;--card:#4d2a3d;--ink:#ffe3ee;--soft:#7a3f5a}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Mali','Sarabun','Noto Sans Thai',sans-serif;text-align:center;overflow-x:hidden;min-height:100vh}
+section{max-width:480px;margin:0 auto;padding:28px 20px;position:relative;z-index:2}
+.card{background:var(--card);border-radius:28px;padding:24px;box-shadow:0 8px 0 var(--soft);margin-bottom:22px;opacity:0;transform:translateY(40px) scale(.95);transition:.7s cubic-bezier(.2,1.4,.4,1)}
+.card.in{opacity:1;transform:none}
+h1{font-size:2rem;margin:.2em 0;color:var(--pink);background:linear-gradient(90deg,#ff7eb0,#ffb36b,#ff7eb0);background-size:200%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 3s linear infinite}
+@keyframes shine{to{background-position:200%}}
+h2{margin:.2em 0 .6em;color:var(--pink)}
+.big{font-size:5rem;animation:bob 1.6s ease-in-out infinite;cursor:pointer;display:inline-block;user-select:none}
+.big.shake{animation:shake .6s}
+@keyframes bob{50%{transform:translateY(-12px) rotate(6deg)}}
+@keyframes shake{20%{transform:rotate(-20deg) scale(1.2)}40%{transform:rotate(20deg) scale(1.3)}60%{transform:rotate(-20deg) scale(1.4)}80%{transform:rotate(20deg) scale(1.5)}100%{transform:scale(2);opacity:0}}
+button{font:inherit;font-weight:700;border:0;border-radius:99px;padding:12px 26px;background:var(--pink);color:#fff;box-shadow:0 5px 0 #d85a90;cursor:pointer;font-size:1.05rem}
+button:active{transform:translateY(3px);box-shadow:0 2px 0 #d85a90}
+#surprise{display:none}
+.days{font-size:2.8rem;color:var(--pink);font-weight:700;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.12)}}
+ul{list-style:none;padding:0;margin:0;text-align:left}
+li{background:var(--bg);margin:10px 0;padding:12px 16px;border-radius:18px;transition:.3s;cursor:pointer}
+li:hover,li.pop{transform:scale(1.05) rotate(-1.5deg);background:var(--soft)}
+.letter{text-align:left;line-height:1.9;white-space:pre-line;min-height:260px}
+.cursor{animation:blink .7s infinite}@keyframes blink{50%{opacity:0}}
+.flips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.flip{perspective:600px;height:120px;cursor:pointer}
+.fi{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.flip.on .fi{transform:rotateY(180deg)}
+.f,.b{position:absolute;inset:0;border-radius:18px;display:flex;align-items:center;justify-content:center;backface-visibility:hidden;-webkit-backface-visibility:hidden;padding:8px;font-size:.85rem}
+.f{background:var(--soft);font-size:2.2rem}
+.b{background:var(--pink);color:#fff;transform:rotateY(180deg);font-weight:600}
+#game{position:relative;height:230px;background:var(--bg);border-radius:22px;overflow:hidden;touch-action:manipulation}
+.t{position:absolute;font-size:2.2rem;cursor:pointer;user-select:none;animation:tpop .3s}
+@keyframes tpop{from{transform:scale(0)}}
+#btns{position:relative;height:120px}
+#no{position:absolute;left:55%;top:60px;background:#b9a3ae;box-shadow:0 5px 0 #8f7a85;transition:.15s}
+#yes{position:absolute;left:12%;top:60px;transition:.2s}
+.h,.sp{position:fixed;pointer-events:none;z-index:9}
+.h{top:-40px;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.sp{animation:fade .8s forwards}@keyframes fade{to{opacity:0;transform:translateY(-30px) scale(.3)}}
+.bg{position:fixed;bottom:-50px;z-index:1;opacity:.35;pointer-events:none;animation:rise linear infinite}
+@keyframes rise{to{transform:translateY(-115vh) translateX(30px) rotate(40deg)}}
+#mus{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:12px;z-index:20;padding:8px 14px;font-size:1rem}
+.mini{font-size:.9rem;opacity:.8}
+</style>
+</head>
+<body>
+<button id="mus" onclick="music()">🎵 เปิดเพลง</button>
+
+<section id="intro">
+  <p>💌 เค้ามีอะไรมาให้บี๋~</p>
+  <div class="big" id="gift" onclick="openIt()">🎁</div>
+  <p>จิ้มที่กล่องของขวัญเลยนะบี๋~</p>
+</section>
+
+<section id="surprise">
+  <div class="card">
+    <div style="font-size:3rem" id="pets">🐻💗🐰</div>
+    <h1>Happy 2 Months!</h1>
+    <p>ครบ 2 เดือนของเรากับบี๋ วันที่ 15 แล้วน้า ก้าวเข้าสู่เดือนที่ 3 แล้วนะ ✨</p>
+    <p>ผ่านมาแล้ว</p>
+    <div class="days" id="days">…</div>
+    <p id="dayslbl">วันที่เรารักกัน</p>
+    <p class="mini" id="next"></p>
+    
+  </div>
+
+  <div class="card">
+    <h2>🌸 ขอบคุณนะบี๋ที่…</h2>
+    <ul>
+      <li>🍓 อยู่ข้าง ๆ เค้าเสมอ</li>
+      <li>🧸 ยิ้มให้เค้าทุกวันจนใจฟู</li>
+      <li>🍰 ทำให้วันธรรมดาของเค้ากลายเป็นวันพิเศษ</li>
+      <li>🌙 ฟังเรื่องไร้สาระของเค้าได้ทั้งคืน</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>🎴 ความลับ</h2>
+    <p class="mini">แตะเพื่อพลิกการ์ด</p>
+    <div class="flips">
+      <div class="flip"><div class="fi"><div class="f">📸</div><div class="b">ความรักที่ดีในมุมมองของเธอควรจะมีลักษณะเป็นอย่างไร</div></div></div>
+      <div class="flip"><div class="fi"><div class="f">🍜</div><div class="b">มีอะไรที่อยากทำแต่ยังไม่ได้ทำ หรือมีเป้าหมายใหญ่อะไรบ้างในอนาคต</div></div></div>
+      <div class="flip"><div class="fi"><div class="f">🌅</div><div class="b">ความทรงจำแรกที่เธอมีเกี่ยวกับเราคืออะไร</div></div></div>
+      <div>ต้องตอบ คำถาม ก่อนนะค่อยไปต่อ</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💌 จดหมายน้อย</h2>
+    <div class="letter" id="letter"></div>
+  </div>
+
+  <div class="card">
+    <h2>🎯 เกมจับหัวใจ</h2>
+    <p>จับให้ครบ 10 ดวง!  <b id="score">0</b>/10</p>
+    <div id="game"></div>
+    <button style="margin-top:12px" onclick="startGame()">เริ่มเล่น 🎮</button>
+  </div>
+
+  <div class="card">
+    <h2>🥺 คำถามสำคัญ</h2>
+    <p>บี๋จะอยู่กับเค้าไปเรื่อย ๆ ใช่มั้ยย?</p>
+    <div id="btns">
+      <button id="yes" onclick="yes()">ใช่สิ 💖</button>
+      <button id="no" onmouseover="run()" ontouchstart="run(event)" onclick="run()">ไม่</button>
+    </div>
+    <p id="ans" style="font-weight:700;color:var(--pink)"></p>
+  </div>
+</section>
+
+<script>
+// ✏️ แก้ตรงนี้: วันเริ่มเป็นแฟนกัน (ปี, เดือน 0-11, วัน)
+var START=new Date(2026,7,15);
+var LETTER="ถึงบี๋ของเค้า,\n\nขอบคุณที่เลือกเดินมาด้วยกันจนครบ 2 เดือน และกำลังเข้าสู่เดือนที่ 3 นะ ถึงบางวันเค้าจะงอแงหรือทำตัวงี่เง่า แต่เค้ารักเธอที่สุดเลย\nต่อจากนี้เค้าสัญญาว่าจะดูแลเธอให้ดีที่สุด ไปกินของอร่อยด้วยกัน เที่ยวด้วยกัน และสร้างความทรงจำน่ารัก ๆ อีกเยอะเลย ขอให้เรามีเดือนที่ 3, 4, 5 ไปเรื่อย ๆ นะ\n\nรักเธอมากที่สุดในโลกเลยนะบี๋ 💗\n— เค้าเอง";
+var E=['💗','💖','🌸','🧸','✨','🍓','🐰','🎀'];
+function r(a){return a[Math.floor(Math.random()*a.length)]}
+function mk(c,t,x,y,fs){var s=document.createElement('span');s.className=c;s.textContent=t;s.style.left=x+'px';if(y!=null)s.style.top=y+'px';if(fs)s.style.fontSize=fs+'px';document.body.appendChild(s);return s}
+function hearts(n){for(var i=0;i<n;i++){var s=mk('h',r(E),Math.random()*innerWidth,null,16+Math.random()*22);
+ s.style.animationDuration=(3+Math.random()*3)+'s';s.style.animationDelay=(Math.random()*1.5)+'s';setTimeout(function(x){x.remove()},7500,s)}}
+function burst(x,y){for(var i=0;i<12;i++){var s=mk('sp',r(E),x,y,18);var a=i/12*6.28,d=60+Math.random()*60;
+ s.animate([{transform:'translate(0,0)',opacity:1},{transform:'translate('+Math.cos(a)*d+'px,'+Math.sin(a)*d+'px) scale(.4)',opacity:0}],{duration:900,easing:'ease-out'});setTimeout(function(z){z.remove()},900,s)}}
+// sparkle trail
+var last=0;addEventListener('pointermove',function(e){var n=Date.now();if(n-last<60)return;last=n;
+ var s=mk('sp','✨',e.clientX,e.clientY,14);setTimeout(function(){s.remove()},800)});
+// tap anywhere = burst
+addEventListener('pointerdown',function(e){if(document.getElementById('surprise').style.display==='block')burst(e.clientX,e.clientY)});
+// floating bg
+function bgFloat(){for(var i=0;i<12;i++){var s=mk('bg',r(E),Math.random()*innerWidth,null,20+Math.random()*24);
+ s.style.animationDuration=(10+Math.random()*12)+'s';s.style.animationDelay=(-Math.random()*15)+'s'}}
+// music (WebAudio music-box)
+var ac,mt=null,notes=[523,659,784,659,698,880,784,659,587,698,659,523],ni=0;
+function music(){var b=document.getElementById('mus');
+ if(mt){clearInterval(mt);mt=null;b.textContent='🎵 เปิดเพลง';return}
+ ac=ac||new (window.AudioContext||window.webkitAudioContext)();b.textContent='🔇 ปิดเพลง';
+ mt=setInterval(function(){var o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=notes[ni++%notes.length];
+  g.gain.setValueAtTime(.12,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.9);
+  o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+.9)},450)}
+// open gift
+function openIt(){var g=document.getElementById('gift');g.classList.add('shake');
+ setTimeout(function(){document.getElementById('intro').style.display='none';
+  document.getElementById('surprise').style.display='block';
+  var d=Math.floor((new Date()-START)/86400000),el=document.getElementById('days');
+  if(d<0){el.textContent='💗';document.getElementById('dayslbl').textContent='รักเธอตลอดไป'}else{var c=0,st=Math.max(1,Math.ceil(d/60)),t=setInterval(function(){c+=st;if(c>=d){c=d;clearInterval(t)}el.textContent=c.toLocaleString()},25)}
+  var n=new Date(),nx=new Date(n.getFullYear(),n.getMonth(),15);if(n.getDate()>15)nx=new Date(n.getFullYear(),n.getMonth()+1,15);
+  var left=Math.ceil((nx-new Date(n.getFullYear(),n.getMonth(),n.getDate()))/86400000);
+  document.getElementById('next').textContent=left===0?'🎉 วันนี้แหละ! ครบ 2 เดือน เข้าสู่เดือนที่ 3 ของเรา':'อีก '+left+' วัน ถึงวันที่ 15 ครั้งหน้า 💞';
+  hearts(50);bgFloat();reveal();if(!mt)music()},600)}
+// scroll reveal + typewriter
+var typed=false;
+function reveal(){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');
+ if(e.target.querySelector('#letter')&&!typed){typed=true;type()}}})},{threshold:.25});
+ document.querySelectorAll('.card').forEach(function(c){io.observe(c)})}
+function type(){var el=document.getElementById('letter'),i=0;(function f(){el.innerHTML=LETTER.slice(0,i).replace(/</g,'&lt;')+'<span class="cursor">|</span>';
+ if(i++<LETTER.length)setTimeout(f,45);else el.textContent=LETTER})()}
+// list pop, flip cards
+document.querySelectorAll('li').forEach(function(l){l.onclick=function(e){l.classList.add('pop');setTimeout(function(){l.classList.remove('pop')},400);burst(e.clientX,e.clientY)}});
+document.querySelectorAll('.flip').forEach(function(f){f.onclick=function(){f.classList.toggle('on')}});
+document.getElementById('pets').onclick=function(){this.textContent=r(['🐻💗🐰','🐱💕🐶','🦊💞🐼','🐥💖🐣'])};
+// heart game
+var sc=0,gt=null;
+function startGame(){sc=0;document.getElementById('score').textContent=0;var g=document.getElementById('game');g.innerHTML='';clearInterval(gt);
+ gt=setInterval(function(){var t=document.createElement('span');t.className='t';t.textContent=r(['💗','💖','💝','🌸']);
+  t.style.left=Math.random()*(g.clientWidth-45)+'px';t.style.top=Math.random()*(g.clientHeight-45)+'px';
+  t.onpointerdown=function(e){e.stopPropagation();t.remove();burst(e.clientX,e.clientY);document.getElementById('score').textContent=++sc;
+   if(sc>=10){clearInterval(gt);g.innerHTML='<div style="padding-top:80px;font-weight:700;color:var(--pink)">เก่งมากบี๋! ใจเธอเต็มแล้ว 💯💕</div>';hearts(60)}};
+  g.appendChild(t);setTimeout(function(){t.remove()},1800)},650)}
+// the question
+var ny=0;
+function run(e){if(e&&e.preventDefault)e.preventDefault();var b=document.getElementById('no'),w=document.getElementById('btns');
+ b.style.left=Math.random()*(w.clientWidth-70)+'px';b.style.top=Math.random()*(w.clientHeight-45)+'px';
+ ny++;var y=document.getElementById('yes');y.style.transform='scale('+Math.min(1+ny*.12,2)+')';
+ if(ny>4)b.textContent=r(['จับไม่ได้หรอก 😜','ไม่ได้นะ 🙈','ใช่เถอะ~ 🥺'])}
+function yes(){document.getElementById('ans').textContent='เย้ เค้ารักเธอที่สุดเลยบี๋!! 🥰💕';hearts(100);
+ for(var i=0;i<6;i++)setTimeout(function(){burst(Math.random()*innerWidth,Math.random()*innerHeight*.8)},i*250)}
+</script>
+</body>
+</html>
